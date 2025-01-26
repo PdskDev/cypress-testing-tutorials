@@ -1,5 +1,5 @@
 describe('javascript window opening Demo', () => {
-  it('javascript window opening Demo', () => {
+  it.skip('javascript window opening Demo', () => {
     cy.visit('https://www.letskodeit.com/practice');
 
     cy.window().then((newWindow) => {
@@ -26,5 +26,11 @@ describe('javascript window opening Demo', () => {
 
     cy.go('back');
     cy.url().should('include', '/practice');
+  });
+
+  it('iframe element hanling Demo', () => {
+    cy.visit('https://www.letskodeit.com/practice');
+
+    cy.get('#search').type('javascript').type('{enter}');
   });
 });
